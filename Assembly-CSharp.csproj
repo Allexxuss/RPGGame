@@ -67,6 +67,7 @@
      <Compile Include="Assets\scipts\MoveKnight.cs" />
      <Compile Include="Assets\scipts\MovePlayer.cs" />
      <Compile Include="Assets\scipts\TargetRotation.cs" />
+     <Compile Include="Assets\scipts\Tooltip.cs" />
      <Compile Include="Assets\Standard Assets 1\Cameras\Scripts\AbstractTargetFollower.cs" />
      <Compile Include="Assets\Standard Assets 1\Cameras\Scripts\AutoCam.cs" />
      <Compile Include="Assets\Standard Assets 1\Cameras\Scripts\FreeLookCam.cs" />

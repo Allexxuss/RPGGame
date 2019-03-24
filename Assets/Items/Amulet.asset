@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ac90edc07214094a843f4d3091eff8c, type: 3}
   m_Name: Amulet
   m_EditorClassIdentifier: 
-  itemDesc: 
+  itemDesc: An amulet enchanted by players
   itemID: 0
   itemPower: 0
   itemSpeed: 0

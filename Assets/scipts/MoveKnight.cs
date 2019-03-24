@@ -8,7 +8,7 @@ public class MoveKnight : MonoBehaviour
     CharacterController player;
 
     public float speed = 3.0f, gravity = 1008f;
-    private bool walk = false, attack = false;
+    private bool walk = false, attack = false, run = false;
 
     Animator animator;
     Rigidbody rigcoll;
@@ -50,6 +50,7 @@ public class MoveKnight : MonoBehaviour
             walk = true;
             //animator.SetBool("running", true);
             animator.SetInteger("condition", 1);
+            //if(run)
         }
 		else
         {

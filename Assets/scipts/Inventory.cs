@@ -36,7 +36,6 @@ public class Inventory : MonoBehaviour
     {
         if (items.Count >= slots.Count)
             return false;
-
         // var potion = ScriptableObject.CreateInstance<Potion>();
         items.Add(item);
         RefreshInventoryDisplay();
