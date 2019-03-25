@@ -11,11 +11,11 @@ public class Tooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     private bool isMouseOver;
 
     public Item CurrentItem { get; set; }
-
     void Awake()
     {
         this.camera = UnityEngine.Camera.main;
         tooltip = GameObject.FindWithTag("TooltipUI");
+        //tooltip.SetActive(false);
     }
     public void OnPointerEnter(PointerEventData eventData)
     {

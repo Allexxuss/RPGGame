@@ -7,6 +7,8 @@ TagManager:
   - Item
   - Item DataBase
   - TooltipUI
+  - InventoryUI
+  - health_bar
   layers:
   - Default
   - TransparentFX

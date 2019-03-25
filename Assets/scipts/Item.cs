@@ -28,7 +28,7 @@ public class Item : ScriptableObject
 
     public string GetTooltipDescription()
     {
-        return $"{name} - {itemDesc}";
+        return $"<color=#000000>{name}</color>\n\n{itemDesc}\n\n<color=#000000>Power:</color><color=#e52b2b> {itemPower}</color>";
     }
 
 

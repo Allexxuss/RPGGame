@@ -6,7 +6,7 @@ public class Damagable : MonoBehaviour
 {
     public float MaxHp;
 
-    public float CurrentHp { get; private set; }
+    public float CurrentHp { get; set; }
 
     void Awake()
     {

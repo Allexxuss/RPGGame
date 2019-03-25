@@ -13,13 +13,15 @@ public class Inventory : MonoBehaviour
     public GameObject InventoryItem;
     public List<Item> items = new List<Item>();
     public List<GameObject> slots = new List<GameObject>();
+    private GameObject ShowInv;
     int slotAmount;
+    bool ShowInventory;
     void Start()
     {
         slotAmount = 12;
         InventoryPanel = GameObject.Find("Inventory Panel");
-        SlotPanel = InventoryPanel.transform.FindChild("Slot Panel").gameObject;
-
+        SlotPanel = InventoryPanel.transform.FindChild("Slot Panel").gameObject; 
+        ShowInv = GameObject.FindGameObjectWithTag("InventoryUI");
         for (int i = 0; i < slotAmount; i++)
         {
             slots.Add(Instantiate(InventorySlot));
@@ -28,8 +30,20 @@ public class Inventory : MonoBehaviour
             itemObj.transform.SetParent(slots[i].transform);
             itemObj.transform.position = Vector2.zero;
         }
+        ShowInv.SetActive(false);
+    }
 
-        RefreshInventoryDisplay();
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Tab))
+        {
+            ShowInventory = !ShowInventory;
+            ShowInv.SetActive(ShowInventory);
+            RefreshInventoryDisplay();
+        }
+        else
+            return;
+        //ShowInventory();
     }
 
     public bool AddItem(Item item)

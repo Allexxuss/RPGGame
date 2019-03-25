@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\map\MiniMapCamTarget.cs" />
+     <Compile Include="Assets\scipts\Bar.cs" />
      <Compile Include="Assets\scipts\Camera.cs" />
      <Compile Include="Assets\scipts\CamRotation.cs" />
      <Compile Include="Assets\scipts\CanvasElement.cs" />
@@ -78,7 +79,7 @@
      <Compile Include="Assets\Standard Assets 1\Cameras\Scripts\PivotBasedCameraRig.cs" />
      <Compile Include="Assets\Standard Assets 1\Cameras\Scripts\ProtectCameraFromWallClip.cs" />
      <None Include="Assets\Warrior 2 Swords\sources\Toon Shading\Toony-Basic.shader" />
-     <None Include="Assets\C&amp;C_Pack\Goblin_rouge\readme.txt" />
+     <None Include="Assets\Goblin_rouge\readme.txt" />
      <None Include="Assets\Warrior 2 Swords\sources\Toon Shading\Toony Gooch RimOutline Hard.shader" />
      <None Include="Assets\Warrior 2 Swords\sources\Toon Shading\Toony-BasicOutline.shader" />
      <None Include="Assets\Standard Assets 1\Cameras\CameraGuidelines.txt" />
