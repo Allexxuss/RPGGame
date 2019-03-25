@@ -61,17 +61,19 @@ public class Inventory : MonoBehaviour
         for (int i = 0; i < items.Count; ++i)
         {
             var item = items[i];
-            var slot = slots[i].transform.GetChild(0);
+            var sprite = slots[i].transform.GetChild(0);
             if (item != null)
             {
-                slot.name = item.name;
-                slot.GetComponent<Image>().enabled = true;
-                slot.GetComponent<Image>().sprite = item.Sprite;
+                sprite.name = item.name;
+                sprite.GetComponent<Image>().enabled = true;
+                sprite.GetComponent<Image>().sprite = item.Sprite;
+                sprite.parent.GetComponent<Tooltip>().CurrentItem = item;
             }
             else
             {
-                slot.name = "empty";
-                slot.GetComponent<Image>().enabled = false;
+                sprite.name = "empty";
+                sprite.GetComponent<Image>().enabled = false;
+                sprite.parent.GetComponent<Tooltip>().CurrentItem = null;
             }
         }
     }

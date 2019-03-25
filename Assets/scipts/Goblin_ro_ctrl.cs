@@ -5,83 +5,104 @@ using UnityEngine.UI;
 using UnityEngine.AI;
 using UnityEditor.AI;
 
-public class Goblin_ro_ctrl : MonoBehaviour {
-	
-	
-	private Animator anim;
-//	private CharacterController controller;
-	private bool battle_state;
+public class Goblin_ro_ctrl : MonoBehaviour
+{
+    public float stoppingDistance = 1;
+    public float visible = 15f;
+    public float AngleVisible = 70f;
+
+    private Animator anim;
+    private bool isAttacking;
+    private bool battle_state;
+    private Vector3 moveDirection = Vector3.zero;
+    private NavMeshAgent agent;
+    private GameObject player;
+
+    // Use this for initialization
+    void Start()
+    {
+
+        anim = GetComponent<Animator>();
+        //controller = GetComponent<CharacterController> ();
+        player = GameObject.FindGameObjectWithTag("Player");
+        agent = GetComponent<NavMeshAgent>();
+    }
 
 
-	public float visible = 15f;
-	public float AngleVisible = 70f;
-	private Vector3 moveDirection = Vector3.zero;
- 	NavMeshAgent agent;
-	GameObject player;
+    IEnumerator AttackRoutine()
+    {
+        isAttacking = true;
+        foreach (var weapon in GetComponentsInChildren<DamageDealer>())
+            weapon.enabled = true;
 
-	
-	
-	
-	// Use this for initialization
-	void Start () {
-		
-		anim = GetComponent<Animator>();
-		//controller = GetComponent<CharacterController> ();
-		player = GameObject.FindGameObjectWithTag("Player");
-		agent = GetComponent<NavMeshAgent>();
-	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-		if(player != null)
-		{
-			
-			float distance = Vector3.Distance(transform.position, player.transform.position);
-			if(distance < 1.5f)
-			{
-				anim.SetInteger("battle", 1);
-				anim.SetInteger("battle", 1);
-				battle_state = true;
-				//Destroy(player);
-			}
-			else if(distance < visible)
-			{
-				Quaternion look = Quaternion.LookRotation(player.transform.position - transform.position);
-				float angle = Quaternion.Angle(transform.rotation, look);
-				if(angle < AngleVisible)
-				{
-					agent.destination = player.transform.position;
-					anim.SetInteger ("moving", 1);//walk
-					//agent.transform.position.y -= 8 * Time.deltaTime
-					//moveDerection.y -= gravity * Time.deltaTime;
-					
-				/*
-					RaycastHit hit;
-					Ray ray = new Ray(transform.position + Vector3.up / 1 метр выше /, player.transform.position - transform.position + Vector3.up);
-					if(Physics.Raycast(ray, out hit, visible))// Пустили луч в сторону игрока на растояние видимости
-					{
-						if(hit.transform.gameObject == player)
-						{
-						}
-					}
-				*/
-					
-					
-				}
-				//agent.enabled = true;
-				//agent.SetDestination(player.transform.position);
-				
-			}
-			else
-			{
-				//agent.Stop();
-				battle_state = false;
-				anim.SetInteger("battle", 0);
-			}
-		}
-		
-		/*
+        int attack = Random.Range(1, 3);
+        anim.SetTrigger("attack" + attack);
+        yield return new WaitForSeconds(1);
+
+        isAttacking = false;
+        foreach (var weapon in GetComponentsInChildren<DamageDealer>())
+            weapon.enabled = false;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (player != null)
+        {
+
+            float distance = Vector3.Distance(transform.position, player.transform.position);
+            if (distance < 1.5f)
+            {
+                anim.SetInteger("moving", 0);
+                anim.SetInteger("battle", 1);
+
+                if (!isAttacking)
+                    StartCoroutine(AttackRoutine());
+                // anim.SetInteger("battle", 1);
+                battle_state = true;
+                //Destroy(player);
+            }
+            else if (distance < visible)
+            {
+                Quaternion look = Quaternion.LookRotation(player.transform.position - transform.position);
+                float angle = Quaternion.Angle(transform.rotation, look);
+                if (angle < AngleVisible)
+                {
+                    Vector3 playerPosition = player.transform.position;
+                    Vector3 currentPosition = agent.nextPosition;
+                    Vector3 direction = (playerPosition - currentPosition).normalized;
+                    Vector3 targetPosition = playerPosition - direction * stoppingDistance;
+                    agent.destination = player.transform.position;
+                    anim.SetInteger("moving", 1);//walk
+                                                 //agent.transform.position.y -= 8 * Time.deltaTime
+                                                 //moveDerection.y -= gravity * Time.deltaTime;
+
+                    /*
+                        RaycastHit hit;
+                        Ray ray = new Ray(transform.position + Vector3.up / 1 метр выше /, player.transform.position - transform.position + Vector3.up);
+                        if(Physics.Raycast(ray, out hit, visible))// Пустили луч в сторону игрока на растояние видимости
+                        {
+                            if(hit.transform.gameObject == player)
+                            {
+                            }
+                        }
+                    */
+
+
+                }
+                //agent.enabled = true;
+                //agent.SetDestination(player.transform.position);
+
+            }
+            else
+            {
+                //agent.Stop();
+                battle_state = false;
+                anim.SetInteger("battle", 0);
+            }
+        }
+
+        /*
 	
 		if (Input.GetKey("2")) //battle_idle
 		{
@@ -177,6 +198,6 @@ public class Goblin_ro_ctrl : MonoBehaviour {
 		controller.Move(moveDirection * Time.deltaTime);
 		moveDirection.y -= gravity * Time.deltaTime;
 		*/
-	}
+    }
 }
 

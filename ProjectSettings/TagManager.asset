@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Item
   - Item DataBase
+  - TooltipUI
   layers:
   - Default
   - TransparentFX

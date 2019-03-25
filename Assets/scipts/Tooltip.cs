@@ -1,33 +1,45 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Tooltip : MonoBehaviour
+public class Tooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    private Item item;
-    private string data;
-    private GameObject tooltip;
+    new UnityEngine.Camera camera;
 
-    void Start()
+    GameObject tooltip;
+    private bool isMouseOver;
+
+    public Item CurrentItem { get; set; }
+
+    void Awake()
     {
-        tooltip = GameObject.Find("Tooltip");
-        tooltip.SetActive(false);
-
+        this.camera = UnityEngine.Camera.main;
+        tooltip = GameObject.FindWithTag("TooltipUI");
     }
-    public void Activate(Item item)
+    public void OnPointerEnter(PointerEventData eventData)
     {
-        this.item = item;
-        ConstructDataString();
+        if (CurrentItem == null)
+            return;
+
+        isMouseOver = true;
         tooltip.SetActive(true);
+        tooltip.GetComponentInChildren<UnityEngine.UI.Text>().text = CurrentItem.GetTooltipDescription();
     }
 
-    public void Diactivate()
+    public void OnPointerExit(PointerEventData eventData)
     {
-
+        isMouseOver = false;
+        tooltip.SetActive(false);
     }
 
-    public void ConstructDataString()
-    {
-        data = item.itemDesc;
-    }
+    // void Update()
+    // {
+    //     if(isMouseOver)
+    //     {
+    //         var mouse = Input.mousePosition;
+    //         var coordinates = camera.ScreenToWorldPoint(mouse) / 100;
+
+    //     }
+    // }
 }

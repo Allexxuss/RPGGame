@@ -92,12 +92,16 @@ public class MoveKnight : MonoBehaviour
 
     IEnumerator AttackRoutine()
     {
+        
+        Debug.Log(nameof(AttackRoutine));
         attack = true;
+        GetComponentInChildren<DamageDealer>().enabled = true;
         //animator.SetBool("attacking", true);
         animator.SetTrigger("attack");
         yield return new WaitForSeconds(1);
         //animator.SetInteger("condition", 2);
         attack = false;
+        GetComponentInChildren<DamageDealer>().enabled = false;
         //animator.SetBool("attacking", false);
     }
 }

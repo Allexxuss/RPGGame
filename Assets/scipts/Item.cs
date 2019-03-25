@@ -26,6 +26,11 @@ public class Item : ScriptableObject
         
     }
 
+    public string GetTooltipDescription()
+    {
+        return $"{name} - {itemDesc}";
+    }
+
 
     // public Item(string name, int id, string desc, int power, int speed, ItemType type)
     // {
