@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class EnemyHelthBar : MonoBehaviour
 {
     new UnityEngine.Camera camera;
-    private Image ForegroundIMG;
     void Awake()
     {
         this.camera = UnityEngine.Camera.main;

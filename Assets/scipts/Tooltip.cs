@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Tooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class Tooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     new UnityEngine.Camera camera;
 
@@ -21,7 +21,7 @@ public class Tooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         if (CurrentItem == null)
             return;
-
+        
         isMouseOver = true;
         tooltip.SetActive(true);
         tooltip.GetComponentInChildren<UnityEngine.UI.Text>().text = CurrentItem.GetTooltipDescription();
@@ -31,6 +31,13 @@ public class Tooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         isMouseOver = false;
         tooltip.SetActive(false);
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        var inventory = Object.FindObjectOfType<Inventory>();
+        inventory.UseItem(CurrentItem);
+        
     }
 
     // void Update()

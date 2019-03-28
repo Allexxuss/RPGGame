@@ -9,16 +9,11 @@ public class Damagable : MonoBehaviour
     private Image HealthIMG;
     public float MaxHp;
     public float CurrentHp { get; set; }
+    public float HPFraction {get {return CurrentHp/MaxHp;} }
     
     void Awake()
     {
         CurrentHp = MaxHp;
-        HealthIMG = GameObject.FindGameObjectWithTag("health_bar").GetComponent<Image>();
-    }
-
-    void Update()
-    {
-        HealthIMG.fillAmount = CurrentHp/100;
     }
     public void DealDamage(float damage)
     {

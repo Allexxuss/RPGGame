@@ -9,6 +9,8 @@ public class Inventory : MonoBehaviour
 {
     GameObject InventoryPanel;
     GameObject SlotPanel;
+    public Weapon CurrentWeapon;
+    public Shield CurrentShield;
     public GameObject InventorySlot;
     public GameObject InventoryItem;
     public List<Item> items = new List<Item>();
@@ -20,7 +22,7 @@ public class Inventory : MonoBehaviour
     {
         slotAmount = 12;
         InventoryPanel = GameObject.Find("Inventory Panel");
-        SlotPanel = InventoryPanel.transform.FindChild("Slot Panel").gameObject; 
+        SlotPanel = InventoryPanel.transform.Find("Slot Panel").gameObject; 
         ShowInv = GameObject.FindGameObjectWithTag("InventoryUI");
         for (int i = 0; i < slotAmount; i++)
         {
@@ -59,8 +61,8 @@ public class Inventory : MonoBehaviour
     public void UseItem(Item item)
     {
         items.Remove(item);
-        RefreshInventoryDisplay();
         item.OnUse();
+        RefreshInventoryDisplay();
     }
 
     public void RemoveItem(Item item)
@@ -72,9 +74,12 @@ public class Inventory : MonoBehaviour
     [ContextMenu("Refresh")]
     void RefreshInventoryDisplay()
     {
-        for (int i = 0; i < items.Count; ++i)
+        for (int i = 0; i < slots.Count; ++i)
         {
-            var item = items[i];
+            Item item = null;
+            if (i < items.Count)
+                item = items[i];
+
             var sprite = slots[i].transform.GetChild(0);
             if (item != null)
             {
@@ -89,6 +94,21 @@ public class Inventory : MonoBehaviour
                 sprite.GetComponent<Image>().enabled = false;
                 sprite.parent.GetComponent<Tooltip>().CurrentItem = null;
             }
+        }
+    }
+
+
+    public void EquipItem(Item item)
+    {
+        if (item is Weapon)
+        {
+            AddItem(CurrentWeapon);
+            CurrentWeapon = item as Weapon;
+        }
+        if (item is Shield)
+        {
+            AddItem(CurrentShield);
+            CurrentShield = item as Shield;
         }
     }
 

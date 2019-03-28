@@ -1,0 +1,29 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class EquiptItemUI : MonoBehaviour
+{
+    public enum EquipmentType { Weapon, Shield, Amulet }
+
+    public EquipmentType type;
+    public Inventory inventory;
+
+    void Update()
+    {
+        var image = GetComponent<Image>();
+        if (type == EquipmentType.Weapon)
+        {
+            var item = inventory.CurrentWeapon;
+            image.sprite = item?.Sprite;
+        }
+        if (type == EquipmentType.Shield)
+        {
+            var item = inventory.CurrentShield;
+            image.sprite = item?.Sprite;
+        }
+
+        image.enabled = image.sprite != null;
+    }
+}
