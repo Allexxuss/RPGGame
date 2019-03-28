@@ -60,6 +60,7 @@
      <Compile Include="Assets\scipts\CanvasElement.cs" />
      <Compile Include="Assets\scipts\Damagable.cs" />
      <Compile Include="Assets\scipts\DamageDealer.cs" />
+     <Compile Include="Assets\scipts\EnemyHelthBar.cs" />
      <Compile Include="Assets\scipts\Goblin_ro_ctrl.cs" />
      <Compile Include="Assets\scipts\HP_Line.cs" />
      <Compile Include="Assets\scipts\Inventory.cs" />

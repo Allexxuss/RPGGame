@@ -6586,6 +6586,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1151139419442457997, guid: 00a11f3eb5ba2aa4a9fe95591be93e28,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00a11f3eb5ba2aa4a9fe95591be93e28, type: 3}
 --- !u!1 &1093292106 stripped
@@ -7244,7 +7249,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -31.59, y: -14.55}
+  m_AnchoredPosition: {x: -31.590027, y: -14.549988}
   m_SizeDelta: {x: -960.79, y: -385.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1188518135
@@ -13007,6 +13012,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100050, guid: ba24e610e0a338545b447ff44a3cf1cc, type: 3}
       propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 100050, guid: ba24e610e0a338545b447ff44a3cf1cc, type: 3}
+      propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: ba24e610e0a338545b447ff44a3cf1cc, type: 3}
