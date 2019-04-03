@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\map\MiniMapCamTarget.cs" />
+     <Compile Include="Assets\scipts\Amulet.cs" />
      <Compile Include="Assets\scipts\Bar.cs" />
      <Compile Include="Assets\scipts\Camera.cs" />
      <Compile Include="Assets\scipts\CamRotation.cs" />

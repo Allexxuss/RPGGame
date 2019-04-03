@@ -11,6 +11,7 @@ public class Inventory : MonoBehaviour
     GameObject SlotPanel;
     public Weapon CurrentWeapon;
     public Shield CurrentShield;
+    public Amulet CurrentAmulet;
     public GameObject InventorySlot;
     public GameObject InventoryItem;
     public List<Item> items = new List<Item>();
@@ -109,6 +110,11 @@ public class Inventory : MonoBehaviour
         {
             AddItem(CurrentShield);
             CurrentShield = item as Shield;
+        }
+        if (item is Amulet)
+        {
+            AddItem(CurrentAmulet);
+            CurrentAmulet = item as Amulet;
         }
     }
 

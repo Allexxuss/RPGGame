@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0c295cb63cec30478a395646308f316, type: 3}
   m_Name: Shield1
   m_EditorClassIdentifier: 
-  itemDesc: SHIELD
+  itemDesc: Shield of prayers
   itemID: 0
   itemPower: 0
   itemSpeed: 0
-  itemType: 0
-  Sprite: {fileID: 21300000, guid: c755167f4f352044fa0a21a25dd43fa3, type: 3}
+  Sprite: {fileID: 21300000, guid: 451bcfdaae3f37d42aad1fc9650ff265, type: 3}
   ShieldPoints: 1

@@ -23,6 +23,12 @@ public class EquiptItemUI : MonoBehaviour
             var item = inventory.CurrentShield;
             image.sprite = item?.Sprite;
         }
+        if (type == EquipmentType.Amulet)
+        {
+            var item = inventory.CurrentAmulet;
+            image.sprite = item?.Sprite;
+        }
+        
 
         image.enabled = image.sprite != null;
     }

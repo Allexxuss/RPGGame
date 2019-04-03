@@ -4324,12 +4324,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentWeapon: {fileID: 0}
   CurrentShield: {fileID: 0}
+  CurrentAmulet: {fileID: 0}
   InventorySlot: {fileID: 3117897583641928284, guid: 0e58b28a50dec19418e5aea86ddd45fe,
     type: 3}
   InventoryItem: {fileID: 6354205157919230531, guid: bb677971242691645ac421e38cb07b30,
     type: 3}
   items:
-  - {fileID: 11400000, guid: 2fb4e4111b766b4438b50f69425f44e0, type: 2}
+  - {fileID: 0}
   slots: []
 --- !u!114 &745517068
 MonoBehaviour:
@@ -6105,7 +6106,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: Tooltip for items
 --- !u!222 &1024646576
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8418,6 +8419,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 007be2a392331434abc86619714d6c9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 860026592ea92c84a920686541e80e57, type: 2}
 --- !u!1 &1380735750
 GameObject:
   m_ObjectHideFlags: 0
