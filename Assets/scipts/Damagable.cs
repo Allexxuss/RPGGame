@@ -21,6 +21,9 @@ public class Damagable : MonoBehaviour
         
         if(CurrentHp <= 0)
         {
+            foreach (var dropItem in GetComponentsInChildren<DropItemOnDestroy>())
+                dropItem.OnDamagableDestroy();
+
             Destroy(gameObject);
         }
 

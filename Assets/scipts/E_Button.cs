@@ -7,39 +7,44 @@ using UnityEngine.UI;
 public class E_Button : MonoBehaviour
 {
     public Item item;
+    public float minDistance = 4f;
     Inventory inv;
-    GameObject player, e_item;
+    GameObject player;
     Canvas canv;
     new UnityEngine.Camera camera;
+    Vector3 positionOffset;
+
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        e_item = GameObject.FindGameObjectWithTag("Item");
         this.camera = UnityEngine.Camera.main;
-        canv = GetComponent<Canvas>();
+        canv = GetComponentInChildren<Canvas>();
         canv.enabled = false;
+        inv = FindObjectOfType<Inventory>();
+        positionOffset = canv.transform.localPosition;
     }
 
     private void LateUpdate()
     {
         if(player != null)
         {
-            float distance = Vector3.Distance(e_item.transform.position, player.transform.position);
-            if(distance <= 4f)
+            float distance = Vector3.Distance(gameObject.transform.position, player.transform.position);
+            if(distance <= minDistance)
             {
                 canv.enabled = true;
                 if(Input.GetKeyDown(KeyCode.E))
                 {
                     inv.AddItem(item);
-                    Destroy(e_item);
+                    Destroy(gameObject);
                 }
                     
             }
             else
                 canv.enabled = false;
         }
-        transform.LookAt(UnityEngine.Camera.main.transform);
-        transform.Rotate(0, 180, 0);
+        canv.transform.position = canv.transform.parent.position + positionOffset;
+        canv.transform.LookAt(camera.transform);
+        canv.transform.Rotate(0, 180, 0);
 
     }
 }

@@ -6,6 +6,8 @@ public class HealthBar : MonoBehaviour
 {
     private Image HealthIMG;
     public Damagable CurrentHp;
+    public float smoothTime = 0.2f;
+    float currentVelocity;
     
     void Awake()
     {
@@ -14,6 +16,11 @@ public class HealthBar : MonoBehaviour
 
     void Update()
     {
-        HealthIMG.fillAmount = CurrentHp.HPFraction;
+        HealthIMG.fillAmount = Mathf.SmoothDamp(
+            current: HealthIMG.fillAmount,
+            target: CurrentHp.HPFraction,
+            ref currentVelocity,
+            smoothTime: smoothTime
+        );
     }
 }

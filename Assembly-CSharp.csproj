@@ -62,8 +62,10 @@
      <Compile Include="Assets\scipts\CoverMiniMap.cs" />
      <Compile Include="Assets\scipts\Damagable.cs" />
      <Compile Include="Assets\scipts\DamageDealer.cs" />
+     <Compile Include="Assets\scipts\DropItemOnDestroy.cs" />
      <Compile Include="Assets\scipts\E_Button.cs" />
      <Compile Include="Assets\scipts\EnemyHelthBar.cs" />
+     <Compile Include="Assets\scipts\EnemySpawner.cs" />
      <Compile Include="Assets\scipts\EquiptItemUI.cs" />
      <Compile Include="Assets\scipts\Goblin_ro_ctrl.cs" />
      <Compile Include="Assets\scipts\HealthBar.cs" />
@@ -75,7 +77,10 @@
      <Compile Include="Assets\scipts\MoveCamera.cs" />
      <Compile Include="Assets\scipts\MoveKnight.cs" />
      <Compile Include="Assets\scipts\MovePlayer.cs" />
+     <Compile Include="Assets\scipts\OnPickUp.cs" />
      <Compile Include="Assets\scipts\Potion.cs" />
+     <Compile Include="Assets\scipts\Quest.cs" />
+     <Compile Include="Assets\scipts\QuestItem.cs" />
      <Compile Include="Assets\scipts\Shield.cs" />
      <Compile Include="Assets\scipts\TargetRotation.cs" />
      <Compile Include="Assets\scipts\Tooltip.cs" />
