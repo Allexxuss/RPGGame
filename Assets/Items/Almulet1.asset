@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a49f342ca8780d4199ea27614579ee0, type: 3}
   m_Name: Almulet1
   m_EditorClassIdentifier: 
-  itemDesc: 
+  itemDesc: Queen's Amulet
   itemID: 0
   itemPower: 0
   itemSpeed: 0
