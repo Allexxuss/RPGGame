@@ -3435,6 +3435,56 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &579212932
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 579212934}
+  - component: {fileID: 579212933}
+  m_Layer: 0
+  m_Name: Quest (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &579212933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579212932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69e39f945f18b8e40886869452c785e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiredItem: {fileID: 11400000, guid: c25d9e899ae8a60419095aae056fb4b8, type: 2}
+  amount: 3
+  event:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!4 &579212934
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579212932}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -357.0484, y: 7.394703, z: -353.72406}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &592811034
 GameObject:
   m_ObjectHideFlags: 0
@@ -3660,6 +3710,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 651939005}
   m_Mesh: {fileID: 4300046, guid: 15aabde25841ebd49a51de7d0bdaab46, type: 3}
+--- !u!1 &663029238 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100108, guid: d021512d6de402148a36d287d6cde611,
+    type: 3}
+  m_PrefabInstance: {fileID: 1283124379}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &669581652
 GameObject:
   m_ObjectHideFlags: 0
@@ -4303,7 +4359,17 @@ MonoBehaviour:
     type: 3}
   InventoryItem: {fileID: 6354205157919230531, guid: bb677971242691645ac421e38cb07b30,
     type: 3}
-  items: []
+  DroppedLootPrefab: {fileID: 1749035204386963042, guid: a6c8e1383573ea442b3305d8cd29e03b,
+    type: 3}
+  items:
+  - {fileID: 11400000, guid: 2f9a1297403792740b463ec83068d375, type: 2}
+  - {fileID: 11400000, guid: 42e979541421c5e44bd6c27096e75d18, type: 2}
+  - {fileID: 11400000, guid: 860026592ea92c84a920686541e80e57, type: 2}
+  - {fileID: 11400000, guid: 44f15ff0e0c8b9847a1fa2d1011c6ec6, type: 2}
+  - {fileID: 11400000, guid: 96c1f1404e2b76d46b6a6361549d0a4d, type: 2}
+  - {fileID: 11400000, guid: bb43b9d4cc451464fbf1209331e4ebb7, type: 2}
+  - {fileID: 11400000, guid: 1d365e99c34c87b409932c3dfd23bc3d, type: 2}
+  - {fileID: 11400000, guid: c25d9e899ae8a60419095aae056fb4b8, type: 2}
   slots: []
 --- !u!114 &745517068
 MonoBehaviour:
@@ -4331,7 +4397,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef9bcfe5e7701964ba6de57dc8da03d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BloodPrefab: {fileID: 3947396671086242609, guid: 10977879115699746a3baaeba3fd9185,
+    type: 3}
   MaxHp: 100
+--- !u!114 &745517070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 745517062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9ee00582c5c068419e23938c18e5534, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armor1: {fileID: 1225582933}
+  armor2: {fileID: 684898444}
+  armor3: {fileID: 975337084}
+  smoothTime: 0.2
 --- !u!136 &745517071
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6606,8 +6690,14 @@ PrefabInstance:
     - target: {fileID: 8474779007377494056, guid: 00a11f3eb5ba2aa4a9fe95591be93e28,
         type: 3}
       propertyPath: MaxHp
-      value: 1
+      value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 8474779007377494056, guid: 00a11f3eb5ba2aa4a9fe95591be93e28,
+        type: 3}
+      propertyPath: BloodPrefab
+      value: 
+      objectReference: {fileID: 3947396671086242609, guid: 10977879115699746a3baaeba3fd9185,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00a11f3eb5ba2aa4a9fe95591be93e28, type: 3}
 --- !u!1 &1093292106 stripped
@@ -6678,7 +6768,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 868b64cb12254394e8e8e1551c7fc783, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemToSpawn: {fileID: 1749035204386963042, guid: a6c8e1383573ea442b3305d8cd29e03b,
+  itemToSpawn: {fileID: 2157417344337694770, guid: d7d1673df3afc464bb48c32ef85d6a08,
     type: 3}
 --- !u!1 &1100563646
 GameObject:
@@ -7055,10 +7145,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiredItem: {fileID: 11400000, guid: c25d9e899ae8a60419095aae056fb4b8, type: 2}
-  ammount: 3
+  amount: 3
   event:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 663029238}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 579212932}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!4 &1160872872
@@ -8012,6 +8124,10 @@ PrefabInstance:
     - target: {fileID: 100108, guid: d021512d6de402148a36d287d6cde611, type: 3}
       propertyPath: m_Name
       value: Orc_Wolfrider
+      objectReference: {fileID: 0}
+    - target: {fileID: 100108, guid: d021512d6de402148a36d287d6cde611, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400108, guid: d021512d6de402148a36d287d6cde611, type: 3}
       propertyPath: m_LocalPosition.x

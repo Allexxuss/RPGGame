@@ -4,9 +4,9 @@ using UnityEngine;
 public class Amulet : Item
 {
     public float HealthRecovery;
-    public override void OnUse()
+
+    public override void OnUse(Inventory inventory)
     {
-        var inventory = Object.FindObjectOfType<Inventory>();
         inventory.EquipItem(this);
         Debug.Log("Amulet was used");
     }

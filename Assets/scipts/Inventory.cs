@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
@@ -14,6 +13,7 @@ public class Inventory : MonoBehaviour
     public Amulet CurrentAmulet;
     public GameObject InventorySlot;
     public GameObject InventoryItem;
+    public GameObject DroppedLootPrefab;
     public List<Item> items = new List<Item>();
     public List<GameObject> slots = new List<GameObject>();
     private GameObject ShowInv;
@@ -62,8 +62,16 @@ public class Inventory : MonoBehaviour
     public void UseItem(Item item)
     {
         items.Remove(item);
-        item.OnUse();
+        item.OnUse(this);
         RefreshInventoryDisplay();
+    }
+
+    public void DropItem(Item item)
+    {
+        items.Remove(item);
+        RefreshInventoryDisplay();
+        var instance = Instantiate(DroppedLootPrefab, transform.position + transform.forward * 0.5f + transform.up * 0.2f, Random.rotation);
+        instance.GetComponent<E_Button>().item = item;
     }
 
     public void RemoveItem(Item item)

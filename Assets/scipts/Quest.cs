@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class Quest : MonoBehaviour
 {
     public QuestItem requiredItem;
-    public int ammount;
+    public int amount = 3;
     public UnityEvent @event;
     Inventory inventory;
 
@@ -19,9 +19,12 @@ public class Quest : MonoBehaviour
 
     void Update()
     {
-        if (inventory.items.Count(x => x == requiredItem) > ammount)
+        if (inventory.items.Count(x => x == requiredItem) >= amount)
         {
             enabled = false;
+            for (int i = 0; i < amount; ++i)
+                inventory.RemoveItem(requiredItem);
+
             @event.Invoke();
         }
     }

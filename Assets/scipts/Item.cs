@@ -12,7 +12,7 @@ public class Item : ScriptableObject
     public int itemSpeed;
     public Sprite Sprite;
 
-    public virtual void OnUse()
+    public virtual void OnUse(Inventory inventory)
     {
         
     }

@@ -4,10 +4,9 @@ using UnityEngine;
 public class Weapon : Item
 {
     public float DamageDealt;
-    public override void OnUse()
+    public override void OnUse(Inventory inventory)
     {
-        var inventory = Object.FindObjectOfType<Inventory>();
         inventory.EquipItem(this);
         Debug.Log("weapon was used");
     }
-}
+} 

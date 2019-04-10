@@ -35,8 +35,19 @@ public class Tooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler,
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        if (CurrentItem == null)
+            return;
+
         var inventory = Object.FindObjectOfType<Inventory>();
-        inventory.UseItem(CurrentItem);        
+
+        if (eventData.button == PointerEventData.InputButton.Left)
+        {
+            inventory.UseItem(CurrentItem);        
+        }
+        else
+        {
+            inventory.DropItem(CurrentItem);
+        }
     }
 
     // void Update()

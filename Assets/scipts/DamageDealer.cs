@@ -27,6 +27,11 @@ public class DamageDealer : MonoBehaviour
 
             Debug.Log($"{transform.root.gameObject} dealing {damage} damage to {damagable}");
             damagable.DealDamage(damage);
+            if (damagable.BloodPrefab)
+            {
+                var blood = Instantiate(damagable.BloodPrefab, end.position, Random.rotation);
+                Destroy(blood, t: 5f);
+            }
             enabled = false;
             return;
         }
