@@ -16,4 +16,4 @@ MonoBehaviour:
   itemID: 0
   itemPower: 0
   itemSpeed: 0
-  Sprite: {fileID: 21300000, guid: 8f8606b24addb214a93ec7fbdde78a1d, type: 3}
+  Sprite: {fileID: 0}
