@@ -1766,6 +1766,9 @@ GameObject:
   - component: {fileID: 14325198}
   - component: {fileID: 11460088}
   - component: {fileID: 8474779007377494056}
+  - component: {fileID: 1348915230324567963}
+  - component: {fileID: 4528033499612259050}
+  - component: {fileID: 3103981140537617698}
   m_Layer: 0
   m_Name: Goblin_rouge_o
   m_TagString: Untagged
@@ -1857,7 +1860,61 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef9bcfe5e7701964ba6de57dc8da03d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHp: 100
+  BloodPrefab: {fileID: 3947396671086242609, guid: 10977879115699746a3baaeba3fd9185,
+    type: 3}
+  MaxHp: 75
+--- !u!195 &1348915230324567963
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172560}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 2
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!54 &4528033499612259050
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172560}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &3103981140537617698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 868b64cb12254394e8e8e1551c7fc783, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemToSpawn: {fileID: 2157417344337694770, guid: d7d1673df3afc464bb48c32ef85d6a08,
+    type: 3}
 --- !u!1 &172858
 GameObject:
   m_ObjectHideFlags: 0
@@ -3047,6 +3104,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2370179568063701163, guid: 8fa1d75ca8241c14ebd5a7acb3966ebb,
+        type: 3}
+      propertyPath: CurrentHp
+      value: 
+      objectReference: {fileID: 8474779007377494056}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fa1d75ca8241c14ebd5a7acb3966ebb, type: 3}
 --- !u!224 &1151139419442457997 stripped
