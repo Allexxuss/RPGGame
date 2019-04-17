@@ -13,7 +13,6 @@ public class Inventory : MonoBehaviour
     public Amulet CurrentAmulet;
     public GameObject InventorySlot;
     public GameObject InventoryItem;
-    public GameObject DroppedLootPrefab;
     public List<Item> items = new List<Item>();
     public List<GameObject> slots = new List<GameObject>();
     private GameObject ShowInv;
@@ -70,8 +69,8 @@ public class Inventory : MonoBehaviour
     {
         items.Remove(item);
         RefreshInventoryDisplay();
-        var instance = Instantiate(DroppedLootPrefab, transform.position + transform.forward * 0.5f + transform.up * 0.2f, Random.rotation);
-        instance.GetComponent<E_Button>().item = item;
+        var instance = Instantiate(item.droppedLootPrefab, transform.position + transform.forward * 0.5f + transform.up * 0.2f, Random.rotation);
+        instance.GetComponent<OnPickUp>().item = item;
     }
 
     public void RemoveItem(Item item)
@@ -106,6 +105,11 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    void OnValidate()
+    {
+        if (InventorySlot == null || InventoryItem == null)
+            Debug.LogError("Inventory is not set up");
+    }
 
     public void EquipItem(Item item)
     {

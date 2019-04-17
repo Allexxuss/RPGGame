@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Shield3
   m_EditorClassIdentifier: 
   itemDesc: Berserker Shield
-  itemID: 0
+  droppedLootPrefab: {fileID: 5352456630802548331, guid: 21aa241cf9cce0c4fa2debc1a422592c,
+    type: 3}
   itemPower: 0
-  itemSpeed: 0
   Sprite: {fileID: 21300000, guid: bffd181622865d74ca1aedac8691add2, type: 3}
   ShieldPoints: 3
+  ShieldHpPerPoint: 50

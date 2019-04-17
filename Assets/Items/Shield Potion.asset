@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Shield Potion
   m_EditorClassIdentifier: 
   itemDesc: 
-  itemID: 0
+  droppedLootPrefab: {fileID: 8221892022026572643, guid: 0df374f612517114f8a831ef32d5c9cc,
+    type: 3}
   itemPower: 0
-  itemSpeed: 0
   Sprite: {fileID: 21300000, guid: 2c021b6c23824684c993bee99b41c602, type: 3}
   HPRestored: 0
   ShieldRestored: 0

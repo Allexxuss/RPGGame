@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Shield1
   m_EditorClassIdentifier: 
   itemDesc: Shield of prayers
-  itemID: 0
+  droppedLootPrefab: {fileID: 5352456630802548331, guid: c313c8e31f3e464489abb7f23457217c,
+    type: 3}
   itemPower: 0
-  itemSpeed: 0
   Sprite: {fileID: 21300000, guid: 451bcfdaae3f37d42aad1fc9650ff265, type: 3}
   ShieldPoints: 1
+  ShieldHpPerPoint: 50

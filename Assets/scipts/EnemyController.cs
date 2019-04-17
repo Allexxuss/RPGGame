@@ -5,11 +5,14 @@ using UnityEngine.UI;
 using UnityEngine.AI;
 using UnityEditor.AI;
 
-public class Goblin_ro_ctrl : MonoBehaviour
+public class EnemyController : MonoBehaviour
 {
-    public float stoppingDistance = 1;
+    public float stoppingDistance = 1.0f;
+    public float attackDistance = 1.5f;
     public float visible = 15f;
     public float AngleVisible = 70f;
+    public float rotationTowardsPlayerTime = 0.5f;
+    public string[] attackTriggerNames;
 
     private Animator anim;
     private bool isAttacking;
@@ -17,6 +20,7 @@ public class Goblin_ro_ctrl : MonoBehaviour
     private Vector3 moveDirection = Vector3.zero;
     private NavMeshAgent agent;
     private GameObject player;
+    private Quaternion targetRotation, rotationVelocity;
 
     // Use this for initialization
     void Start()
@@ -28,20 +32,31 @@ public class Goblin_ro_ctrl : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
     }
 
-
     IEnumerator AttackRoutine()
     {
+        Quaternion previousRotation = transform.rotation;
+        transform.LookAt(player.transform);
+        targetRotation = transform.rotation;
+        transform.rotation = previousRotation;
+
+        AngleVisible = 360f;
         isAttacking = true;
         foreach (var weapon in GetComponentsInChildren<DamageDealer>())
             weapon.enabled = true;
 
-        int attack = Random.Range(1, 3);
-        anim.SetTrigger("attack" + attack);
+        string triggerName = attackTriggerNames.FirstRandom();
+        anim.SetTrigger(triggerName);
         yield return new WaitForSeconds(1);
 
         isAttacking = false;
         foreach (var weapon in GetComponentsInChildren<DamageDealer>())
             weapon.enabled = false;
+    }
+
+    void LateUpdate()
+    {
+        if (isAttacking) // rotate enemy towards player
+            transform.rotation = transform.rotation.SmoothDamp(targetRotation, ref rotationVelocity, rotationTowardsPlayerTime);
     }
 
     // Update is called once per frame
@@ -51,7 +66,7 @@ public class Goblin_ro_ctrl : MonoBehaviour
         {
 
             float distance = Vector3.Distance(transform.position, player.transform.position);
-            if (distance < 1.5f)
+            if (distance < attackDistance)
             {
                 anim.SetInteger("moving", 0);
                 anim.SetInteger("battle", 1);
@@ -99,6 +114,7 @@ public class Goblin_ro_ctrl : MonoBehaviour
                 //agent.Stop();
                 battle_state = false;
                 anim.SetInteger("battle", 0);
+                AngleVisible = 70f;
             }
         }
 

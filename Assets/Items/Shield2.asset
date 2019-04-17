@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Shield2
   m_EditorClassIdentifier: 
   itemDesc: Shield of the ancients
-  itemID: 0
+  droppedLootPrefab: {fileID: 5352456630802548331, guid: 93259fb3d5b3652408589a4b82ff4027,
+    type: 3}
   itemPower: 0
-  itemSpeed: 0
   Sprite: {fileID: 21300000, guid: c755167f4f352044fa0a21a25dd43fa3, type: 3}
   ShieldPoints: 2
+  ShieldHpPerPoint: 50

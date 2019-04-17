@@ -7,9 +7,8 @@ using UnityEngine;
 public class Item : ScriptableObject
 {
     public string itemDesc;
-    public int itemID;
+    public GameObject droppedLootPrefab;
     public int itemPower;
-    public int itemSpeed;
     public Sprite Sprite;
 
     public virtual void OnUse(Inventory inventory)
@@ -20,6 +19,12 @@ public class Item : ScriptableObject
     public virtual void OnPickUp()
     {
         
+    }
+
+    void OnValidate()
+    {
+        if (droppedLootPrefab == null)
+            Debug.LogError($"Item {this} has no droppedLootPrefab", this);
     }
 
     public string GetTooltipDescription()

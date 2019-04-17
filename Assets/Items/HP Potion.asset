@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: HP Potion
   m_EditorClassIdentifier: 
   itemDesc: 
-  itemID: 0
+  droppedLootPrefab: {fileID: 3983332836902299436, guid: 0f4590fdbd8ee744fb6e82c649a37abd,
+    type: 3}
   itemPower: 0
-  itemSpeed: 0
   Sprite: {fileID: 21300000, guid: d0014021ff6e58d4a8bcc8996402ff07, type: 3}
   HPRestored: 0
   ShieldRestored: 0

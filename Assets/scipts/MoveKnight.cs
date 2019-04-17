@@ -8,7 +8,7 @@ public class MoveKnight : MonoBehaviour
     CharacterController player;
 
     public float speed = 3.0f, gravity = 1008f;
-    private bool walk = false, attack = false, run = false;
+    private bool walk = false, isAttacking = false, run = false;
 
     Animator animator;
     Rigidbody rigcoll;
@@ -40,7 +40,7 @@ public class MoveKnight : MonoBehaviour
 
     void Movement()
     {
-        if (attack)
+        if (isAttacking)
             return;
 
         float AD = Input.GetAxis("Horizontal");
@@ -87,22 +87,21 @@ public class MoveKnight : MonoBehaviour
 
     void Attacking()
     {
+        if (isAttacking)
+            return;
+
         StartCoroutine(AttackRoutine());
     }
 
     IEnumerator AttackRoutine()
     {
-        
-        Debug.Log(nameof(AttackRoutine));
-        attack = true;
-        GetComponentInChildren<DamageDealer>().enabled = true;
-        //animator.SetBool("attacking", true);
+        isAttacking = true;
         animator.SetTrigger("attack");
-        yield return new WaitForSeconds(1);
-        //animator.SetInteger("condition", 2);
-        attack = false;
+        yield return new WaitForSeconds(0.1f);
+        GetComponentInChildren<DamageDealer>().enabled = true;
+        yield return new WaitForSeconds(0.9f);
+        isAttacking = false;
         GetComponentInChildren<DamageDealer>().enabled = false;
-        //animator.SetBool("attacking", false);
     }
 }
 
