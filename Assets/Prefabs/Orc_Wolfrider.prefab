@@ -237,8 +237,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stoppingDistance: 1
+  attackDistance: 1.5
   visible: 15
   AngleVisible: 70
+  rotationTowardsPlayerTime: 0.5
   attackTriggerNames:
   - attack1
 --- !u!114 &102433229
@@ -253,8 +255,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 868b64cb12254394e8e8e1551c7fc783, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemToSpawn: {fileID: 2157417344337694770, guid: d7d1673df3afc464bb48c32ef85d6a08,
-    type: 3}
+  itemToSpawn:
+  - {fileID: 3983332836902299436, guid: 0f4590fdbd8ee744fb6e82c649a37abd, type: 3}
+  - {fileID: 8221892022026572643, guid: 0df374f612517114f8a831ef32d5c9cc, type: 3}
+  - {fileID: 5352456630802548331, guid: 21aa241cf9cce0c4fa2debc1a422592c, type: 3}
+  - {fileID: 7086223308017492355, guid: 426eec7b83953094481b3e218bae625d, type: 3}
+  - {fileID: 2157417344337694770, guid: d7d1673df3afc464bb48c32ef85d6a08, type: 3}
 --- !u!1 &138159062
 GameObject:
   m_ObjectHideFlags: 0
