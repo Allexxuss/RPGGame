@@ -21,7 +21,9 @@ public class OnPickUp : MonoBehaviour
         canv = GetComponentInChildren<Canvas>();
         canv.enabled = false;
         inv = FindObjectOfType<Inventory>();
-        positionOffset = canv.transform.localPosition;
+        positionOffset = Vector3.zero;//gameObject.transform.localPosition;
+        positionOffset.y += 1f;
+        //positionOffset
     }
 
     private void LateUpdate()
@@ -42,7 +44,7 @@ public class OnPickUp : MonoBehaviour
             else
                 canv.enabled = false;
         }
-        canv.transform.position = canv.transform.parent.position + positionOffset;
+        canv.transform.position = canv.transform.parent.position + positionOffset;//positionOffset;
         canv.transform.LookAt(camera.transform);
         canv.transform.Rotate(0, 180, 0);
 

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Weapon3
   m_EditorClassIdentifier: 
   itemDesc: Weapon lvl 3
-  droppedLootPrefab: {fileID: 7086223308017492355, guid: 426eec7b83953094481b3e218bae625d,
+  droppedLootPrefab: {fileID: 7086223308017492355, guid: 325d7d2291df58249b19e6477b246a74,
     type: 3}
   itemPower: 0
   Sprite: {fileID: 21300000, guid: 2140a7b34132ad24fbb02e2eed64badd, type: 3}
