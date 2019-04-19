@@ -3,7 +3,6 @@ using System.Collections;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 using UnityEngine.AI;
-using UnityEditor.AI;
 
 public class EnemyController : MonoBehaviour
 {

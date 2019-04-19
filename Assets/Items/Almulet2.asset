@@ -17,4 +17,4 @@ MonoBehaviour:
     type: 3}
   itemPower: 0
   Sprite: {fileID: 21300000, guid: 01fb4d6adb9e9ce4ead8faa4429720c1, type: 3}
-  HPRestored: 7
+  HPRestored: 5
