@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 548}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -111,10 +111,10 @@ MonoBehaviour:
     y: 30
     width: 1536
     height: 731
-  m_MinSize: {x: 681, y: 498}
+  m_MinSize: {x: 683, y: 498}
   m_MaxSize: {x: 14004, y: 14048}
   vertical: 0
-  controlID: 73
+  controlID: 69
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -136,10 +136,10 @@ MonoBehaviour:
     y: 0
     width: 1256
     height: 731
-  m_MinSize: {x: 404, y: 498}
+  m_MinSize: {x: 406, y: 498}
   m_MaxSize: {x: 10002, y: 14048}
   vertical: 1
-  controlID: 74
+  controlID: 70
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -161,10 +161,10 @@ MonoBehaviour:
     y: 0
     width: 1256
     height: 452
-  m_MinSize: {x: 404, y: 224}
-  m_MaxSize: {x: 8004, y: 4024}
+  m_MinSize: {x: 406, y: 224}
+  m_MaxSize: {x: 8006, y: 4024}
   vertical: 0
-  controlID: 75
+  controlID: 71
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -384,7 +384,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 50eaffff6aeaffff40edffffb0fbffff
+      m_ExpandedIDs: 40eeffff5aeeffff30f1ffffb0fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -440,9 +440,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -357.91663, y: 9.104489, z: -352.43845}
+    m_Target: {x: -345.27005, y: 11.378702, z: -351.07297}
     speed: 2
-    m_Value: {x: -357.91663, y: 9.104489, z: -352.43845}
+    m_Value: {x: -345.27005, y: 11.378702, z: -351.07297}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -474,9 +474,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: -0.017969767, y: -0.05696004, z: -0.0010253853, w: 0.99821424}
   m_Size:
-    m_Target: 9.987171
+    m_Target: 11.375888
     speed: 2
-    m_Value: 9.987171
+    m_Value: 11.375888
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -667,11 +667,11 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Items
+    - Assets/loot
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/Items
+  - Assets/loot
   m_LastFoldersGridSize: 96
   m_LastProjectPath: C:\Users\alexe\OneDrive - The Opole University of Technology\Unity\Progects\move
     character
@@ -679,8 +679,8 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 90.703705}
-    m_SelectedIDs: c4300000
-    m_LastClickedID: 12484
+    m_SelectedIDs: 5a370000
+    m_LastClickedID: 14170
     m_ExpandedIDs: 00000000dc290000ac2b0000de2f00005a370000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
