@@ -1,5 +1,6 @@
 using UnityEngine;
 
+
 [CreateAssetMenu]
 public class Potion : Item
 {
@@ -9,7 +10,7 @@ public class Potion : Item
     public override void OnUse(Inventory inventory)
     {
         var damagable = inventory.GetComponent<Damagable>();
-        damagable.RestoreHp(HPRestored);
+        damagable.RestoreHp(HPRestored, false);
 
         if (inventory.CurrentShield != null)
             inventory.CurrentShield.RestoreShield(ShieldRestored);

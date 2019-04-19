@@ -18,10 +18,14 @@ public class Damagable : MonoBehaviour
         CurrentHp = MaxHp;
     }
 
-    public void RestoreHp(float hp)
+    public void RestoreHp(float hp, bool amulet)
     {
         CurrentHp += hp;
         CurrentHp = Mathf.Clamp(value: CurrentHp, min: 0, max: MaxHp);
+        if(amulet)
+        {
+            StartCoroutine(RestoredHP(hp));
+        }
     }
 
     public void DealDamage(float damage)
@@ -38,5 +42,17 @@ public class Damagable : MonoBehaviour
 
             Destroy(gameObject);
         }
+    }
+
+    IEnumerator RestoredHP(float HPRestored)
+    {
+        while(true)
+        {
+            CurrentHp += HPRestored;
+            CurrentHp = Mathf.Clamp(value: CurrentHp, min: 0, max: MaxHp);
+            yield return new WaitForSeconds(3f);
+        }
+        
+
     }
 }

@@ -17,4 +17,4 @@ MonoBehaviour:
     type: 3}
   itemPower: 0
   Sprite: {fileID: 21300000, guid: 2140a7b34132ad24fbb02e2eed64badd, type: 3}
-  DamageDealt: 50
+  DamageDealt: 100

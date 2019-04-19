@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Almulet2
   m_EditorClassIdentifier: 
   itemDesc: 
-  droppedLootPrefab: {fileID: 1749035204386963042, guid: a6c8e1383573ea442b3305d8cd29e03b,
+  droppedLootPrefab: {fileID: 6614291109855171221, guid: 93ff8f87202b7d941b2438b4566e11f6,
     type: 3}
   itemPower: 0
   Sprite: {fileID: 21300000, guid: 01fb4d6adb9e9ce4ead8faa4429720c1, type: 3}
-  HealthRecovery: 10
+  HPRestored: 7
