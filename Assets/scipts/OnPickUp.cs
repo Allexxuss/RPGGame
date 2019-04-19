@@ -16,11 +16,9 @@ public class OnPickUp : MonoBehaviour
 
     void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
         this.camera = UnityEngine.Camera.main;
         canv = GetComponentInChildren<Canvas>();
         canv.enabled = false;
-        inv = FindObjectOfType<Inventory>();
         positionOffset = Vector3.zero;//gameObject.transform.localPosition;
         positionOffset.y += 1f;
         //positionOffset
@@ -28,6 +26,12 @@ public class OnPickUp : MonoBehaviour
 
     private void LateUpdate()
     {
+        if (player == null)
+            player = GameObject.FindGameObjectWithTag("Player");
+
+        if (inv == null)
+            inv = FindObjectOfType<Inventory>();
+
         if(player != null)
         {
             float distance = Vector3.Distance(gameObject.transform.position, player.transform.position);

@@ -361,7 +361,6 @@ GameObject:
   - component: {fileID: 745517067}
   - component: {fileID: 745517068}
   - component: {fileID: 745517069}
-  - component: {fileID: 745517070}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -488,14 +487,8 @@ MonoBehaviour:
   InventoryItem: {fileID: 6354205157919230531, guid: bb677971242691645ac421e38cb07b30,
     type: 3}
   items:
-  - {fileID: 11400000, guid: 2f9a1297403792740b463ec83068d375, type: 2}
-  - {fileID: 11400000, guid: 42e979541421c5e44bd6c27096e75d18, type: 2}
-  - {fileID: 11400000, guid: 860026592ea92c84a920686541e80e57, type: 2}
-  - {fileID: 11400000, guid: 44f15ff0e0c8b9847a1fa2d1011c6ec6, type: 2}
-  - {fileID: 11400000, guid: 96c1f1404e2b76d46b6a6361549d0a4d, type: 2}
   - {fileID: 11400000, guid: bb43b9d4cc451464fbf1209331e4ebb7, type: 2}
-  - {fileID: 11400000, guid: 1d365e99c34c87b409932c3dfd23bc3d, type: 2}
-  - {fileID: 11400000, guid: c25d9e899ae8a60419095aae056fb4b8, type: 2}
+  - {fileID: 11400000, guid: 140bc7d2bb6749042812b89382c3c434, type: 2}
   slots: []
 --- !u!114 &745517068
 MonoBehaviour:
@@ -526,22 +519,6 @@ MonoBehaviour:
   BloodPrefab: {fileID: 3947396671086242609, guid: 10977879115699746a3baaeba3fd9185,
     type: 3}
   MaxHp: 100
---- !u!114 &745517070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 745517062}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9ee00582c5c068419e23938c18e5534, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  armor1: {fileID: 0}
-  armor2: {fileID: 0}
-  armor3: {fileID: 0}
-  smoothTime: 0.2
 --- !u!1 &753004245
 GameObject:
   m_ObjectHideFlags: 0

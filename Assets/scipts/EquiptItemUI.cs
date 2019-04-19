@@ -8,10 +8,13 @@ public class EquiptItemUI : MonoBehaviour
     public enum EquipmentType { Weapon, Shield, Amulet }
 
     public EquipmentType type;
-    public Inventory inventory;
+    Inventory inventory;
 
     void Update()
     {
+        if (!inventory)
+            inventory = FindObjectOfType<Inventory>();
+
         var image = GetComponent<Image>();
         if (type == EquipmentType.Weapon)
         {

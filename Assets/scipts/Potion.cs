@@ -10,7 +10,7 @@ public class Potion : Item
     public override void OnUse(Inventory inventory)
     {
         var damagable = inventory.GetComponent<Damagable>();
-        damagable.RestoreHp(HPRestored, false);
+        damagable.RestoreHp(HPRestored);
 
         if (inventory.CurrentShield != null)
             inventory.CurrentShield.RestoreShield(ShieldRestored);

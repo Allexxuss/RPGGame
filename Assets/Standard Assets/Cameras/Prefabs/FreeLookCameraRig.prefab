@@ -257,10 +257,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Target: {fileID: 0}
-  m_AutoTargetPlayer: 1
-  m_UpdateType: 0
-  m_MoveSpeed: 1
-  m_TurnSpeed: 1.5
+  m_AutoTargetPlayer: 0
+  m_UpdateType: 1
+  m_MoveSpeed: 10
+  m_TurnSpeed: 3.49
   m_TurnSmoothing: 0
   m_TiltMax: 75
   m_TiltMin: 45
@@ -282,7 +282,7 @@ MonoBehaviour:
   returnTime: 0.4
   sphereCastRadius: 0.1
   visualiseInEditor: 1
-  closestDistance: 0.5
+  closestDistance: 2
   dontClipTag: Player
 --- !u!1 &163443345430967840
 GameObject:

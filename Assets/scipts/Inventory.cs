@@ -6,31 +6,40 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    GameObject InventoryPanel;
-    GameObject SlotPanel;
     public Weapon CurrentWeapon;
     public Shield CurrentShield;
     public Amulet CurrentAmulet;
     public GameObject InventorySlot;
     public GameObject InventoryItem;
     public List<Item> items = new List<Item>();
-    public List<GameObject> slots = new List<GameObject>();
-    private GameObject ShowInv;
     int slotAmount;
     bool ShowInventory;
+    public static List<GameObject> slots = new List<GameObject>();
+    private static GameObject InventoryPanel;
+    private static GameObject SlotPanel;
+    private static GameObject ShowInv;
+
     void Start()
     {
         slotAmount = 12;
-        InventoryPanel = GameObject.Find("Inventory Panel");
-        SlotPanel = InventoryPanel.transform.Find("Slot Panel").gameObject; 
-        ShowInv = GameObject.FindGameObjectWithTag("InventoryUI");
-        for (int i = 0; i < slotAmount; i++)
+
+        if (!InventoryPanel)
+            InventoryPanel = GameObject.Find("Inventory Panel");
+        if (!SlotPanel)
+            SlotPanel = InventoryPanel.transform.Find("Slot Panel").gameObject; 
+        if (!ShowInv)
+            ShowInv = GameObject.FindGameObjectWithTag("InventoryUI");
+
+        if (slots.Count != slotAmount)
         {
-            slots.Add(Instantiate(InventorySlot));
-            slots[i].transform.SetParent(SlotPanel.transform);
-            GameObject itemObj = Instantiate(InventoryItem);
-            itemObj.transform.SetParent(slots[i].transform);
-            itemObj.transform.position = Vector2.zero;
+            for (int i = 0; i < slotAmount; i++)
+            {
+                slots.Add(Instantiate(InventorySlot));
+                slots[i].transform.SetParent(SlotPanel.transform);
+                GameObject itemObj = Instantiate(InventoryItem);
+                itemObj.transform.SetParent(slots[i].transform);
+                itemObj.transform.position = Vector2.zero;
+            }
         }
         ShowInv.SetActive(false);
     }
@@ -69,7 +78,7 @@ public class Inventory : MonoBehaviour
     {
         items.Remove(item);
         RefreshInventoryDisplay();
-        var instance = Instantiate(item.droppedLootPrefab, transform.position + transform.forward * 0.5f + transform.up * 0.2f, Random.rotation);
+        var instance = Instantiate(item.droppedLootPrefab, transform.position + transform.forward * 0.5f + transform.up * 0.3f, Random.rotation);
         instance.GetComponent<OnPickUp>().item = item;
     }
 
@@ -103,6 +112,12 @@ public class Inventory : MonoBehaviour
                 sprite.parent.GetComponent<Tooltip>().CurrentItem = null;
             }
         }
+    }
+
+    public void DropAllItems()
+    {
+        foreach (var item in items.ToArray())
+            DropItem(item);
     }
 
     void OnValidate()

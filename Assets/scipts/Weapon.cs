@@ -7,6 +7,7 @@ public class Weapon : Item
     public override void OnUse(Inventory inventory)
     {
         inventory.EquipItem(this);
+        inventory.GetComponentInChildren<DamageDealer>().damage = DamageDealt;
         Debug.Log("weapon was used");
     }
 } 

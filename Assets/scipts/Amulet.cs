@@ -14,7 +14,7 @@ public class Amulet : Item
     {
         inventory.EquipItem(this);
         var damagable = inventory.GetComponent<Damagable>();
-        damagable.RestoreHp(HPRestored, true);
+        damagable.StartHpRegen(HPRestored);
         Debug.Log("Amulet was used");
     }
 

@@ -18,14 +18,16 @@ public class Damagable : MonoBehaviour
         CurrentHp = MaxHp;
     }
 
-    public void RestoreHp(float hp, bool amulet)
+    public void RestoreHp(float hp)
     {
         CurrentHp += hp;
         CurrentHp = Mathf.Clamp(value: CurrentHp, min: 0, max: MaxHp);
-        if(amulet)
-        {
-            StartCoroutine(RestoredHP(hp));
-        }
+    }
+
+    public void StartHpRegen(float hpRegen)
+    {
+        StopAllCoroutines();
+        StartCoroutine(RestoredHP(hpRegen));
     }
 
     public void DealDamage(float damage)
@@ -40,6 +42,9 @@ public class Damagable : MonoBehaviour
             foreach (var dropItem in GetComponentsInChildren<DropItemOnDestroy>())
                 dropItem.OnDamagableDestroy();
 
+            if (inventory)
+                inventory.DropAllItems();
+
             Destroy(gameObject);
         }
     }
@@ -48,11 +53,8 @@ public class Damagable : MonoBehaviour
     {
         while(true)
         {
-            CurrentHp += HPRestored;
-            CurrentHp = Mathf.Clamp(value: CurrentHp, min: 0, max: MaxHp);
+            RestoreHp(HPRestored);
             yield return new WaitForSeconds(3f);
         }
-        
-
     }
 }

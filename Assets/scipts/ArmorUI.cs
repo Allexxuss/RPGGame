@@ -9,15 +9,17 @@ public class ArmorUI : MonoBehaviour
     Damagable playerDamagable;
     Inventory playerInventory;
 
-
-    void Awake()
+    void Initialize()
     {
-        playerDamagable = GetComponent<Damagable>();
-        playerInventory = GetComponent<Inventory>();
+        if (!playerInventory)
+            playerInventory = FindObjectOfType<Inventory>();
+        if (!playerDamagable)
+            playerDamagable = playerInventory.GetComponent<Damagable>();
     }
 
     void Start()
     {
+        Initialize();
         if (playerInventory.CurrentShield)
             UpdateArmorPoints(playerInventory.CurrentShield.ShieldPoints);
         else
@@ -42,6 +44,7 @@ public class ArmorUI : MonoBehaviour
 
     void Update()
     {
+        Initialize();
         var shield = playerInventory.CurrentShield;
 
         if (!shield)

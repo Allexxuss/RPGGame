@@ -80,6 +80,7 @@
      <Compile Include="Assets\scipts\MoveKnight.cs" />
      <Compile Include="Assets\scipts\MovePlayer.cs" />
      <Compile Include="Assets\scipts\OnPickUp.cs" />
+     <Compile Include="Assets\scipts\PlayerSpawner.cs" />
      <Compile Include="Assets\scipts\Potion.cs" />
      <Compile Include="Assets\scipts\Quest.cs" />
      <Compile Include="Assets\scipts\QuestItem.cs" />
@@ -88,17 +89,10 @@
      <Compile Include="Assets\scipts\Tooltip.cs" />
      <Compile Include="Assets\scipts\Weapon.cs" />
      <Compile Include="Assets\Standard Assets 1\Cameras\Scripts\AbstractTargetFollower.cs" />
-     <Compile Include="Assets\Standard Assets 1\Cameras\Scripts\AutoCam.cs" />
-     <Compile Include="Assets\Standard Assets 1\Cameras\Scripts\FreeLookCam.cs" />
-     <Compile Include="Assets\Standard Assets 1\Cameras\Scripts\HandHeldCam.cs" />
-     <Compile Include="Assets\Standard Assets 1\Cameras\Scripts\LookatTarget.cs" />
-     <Compile Include="Assets\Standard Assets 1\Cameras\Scripts\PivotBasedCameraRig.cs" />
-     <Compile Include="Assets\Standard Assets 1\Cameras\Scripts\ProtectCameraFromWallClip.cs" />
      <None Include="Assets\Warrior 2 Swords\sources\Toon Shading\Toony-Basic.shader" />
      <None Include="Assets\Goblin_rouge\readme.txt" />
      <None Include="Assets\Warrior 2 Swords\sources\Toon Shading\Toony Gooch RimOutline Hard.shader" />
      <None Include="Assets\Warrior 2 Swords\sources\Toon Shading\Toony-BasicOutline.shader" />
-     <None Include="Assets\Standard Assets 1\Cameras\CameraGuidelines.txt" />
      <None Include="Assets\Warrior 2 Swords\sources\Toon Shading\Toony-LightedOutline.shader" />
      <None Include="Assets\Warrior 2 Swords\sources\Toon Shading\Toony-Lighted.shader" />
  <Reference Include="Unity.TextMeshPro.Editor">

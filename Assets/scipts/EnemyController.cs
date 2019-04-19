@@ -27,7 +27,6 @@ public class EnemyController : MonoBehaviour
 
         anim = GetComponent<Animator>();
         //controller = GetComponent<CharacterController> ();
-        player = GameObject.FindGameObjectWithTag("Player");
         agent = GetComponent<NavMeshAgent>();
     }
 
@@ -61,9 +60,11 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (player == null)
+            player = GameObject.FindGameObjectWithTag("Player");
+
         if (player != null)
         {
-
             float distance = Vector3.Distance(transform.position, player.transform.position);
             if (distance < attackDistance)
             {
